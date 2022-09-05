@@ -1,50 +1,45 @@
 /* STYLES PRINCIPAUX */
-
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
 @font-face {
-  font-family: 'Roboto', sans-serif;
-  src: url('Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-      url('Roboto-Regular.woff2') format('woff2'),
-      url('Roboto-Regular.woff') format('woff'),
-      url('Roboto-Regular.ttf') format('truetype'),
-      url('Roboto-Regular.svg#Roboto-Regular') format('svg');
+  font-family: "Roboto", sans-serif;
+  src: url("Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("Roboto-Regular.woff2") format("woff2"), url("Roboto-Regular.woff") format("woff"), url("Roboto-Regular.ttf") format("truetype"), url("Roboto-Regular.svg#Roboto-Regular") format("svg");
 }
-
 body {
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 p {
-  font-family: 'roboto';
+  font-family: "roboto";
 }
 
 h1 {
   font-weight: bold;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 24px;
 }
 
 h4 {
   font-weight: lighter;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 16px;
 }
 
 /* DEFINITION HEADER NAVBAR */
-
 .navbar {
   padding-top: 30px;
   padding-bottom: 30px;
-  box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
@@ -54,26 +49,7 @@ h4 {
   height: 35px;
 }
 
-/* DEFINITION LOCALISATION BAR */
-
-.bar__loca--zone {
-  background-color: #f3f2f2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-
-.bar__loca--zone p, i  {
-  font-size: 20px;
-  font-weight: bold;
-  opacity: 0.6;
-}
-
 /* DEFINITION INTRO */
-
 .bar__intro {
   background-color: #f7f7f7;
   border: 1px none solid;
@@ -92,25 +68,38 @@ h4 {
 .bar__intro h4 {
   margin: 22px 80px 0 80px;
   opacity: 0.6;
-  
 }
 
 .btn__explore {
   margin-top: 22px;
   font-weight: 600;
-  font-family: 'roboto';
+  font-family: "roboto";
   color: white;
   font-size: 18px;
   padding: 15px 20px 15px 20px;
   border-radius: 100px;
-  background-image: linear-gradient(1deg,#9356DC,#FF79DA);
+  background-image: linear-gradient(1deg, #9356DC, #FF79DA);
   box-shadow: 2px 2px 10px rgb(146, 146, 146);
 }
 
-/* DEFINITION TUTORIEL */
+/* DEFINITION LOCALISATION BAR */
+.bar__loca--zone {
+  background-color: #f3f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.bar__loca--zone p, .bar__loca--zone i {
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.6;
+}
 
 .tutorial {
-  margin: 20px;
+  margin: 20px 20px 60px 20px;
 }
 
 .tutorial__container {
@@ -162,3 +151,80 @@ h4 {
   border-radius: 50%;
   margin-left: -8px;
 }
+
+@media (min-width: 992px) {
+  .tutorial__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .tutorial__container--step {
+    flex-grow: 3;
+    width: 100%;
+  }
+}
+.map__restaurants {
+  padding: 20px 20px 60px 20px;
+  background-color: #f6f6f6;
+}
+.map__restaurants--title {
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.map_restaurants--container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgb(146, 146, 146);
+}
+
+.card__description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 20px 20px;
+  padding: 14px;
+}
+.card__description--titre h3 {
+  padding-bottom: 6px;
+}
+
+.card__description i {
+  font-size: 24px;
+}
+
+.card img {
+  height: 192px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  flex-grow: inherit;
+}
+
+@media (min-width: 992px) {
+  .map_restaurants--container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .card {
+    flex-basis: 48%;
+    flex-grow: 3;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
