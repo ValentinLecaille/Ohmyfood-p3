@@ -23,6 +23,11 @@
     box-shadow: 2px 2px 10px rgb(146, 146, 146);
 }
 
+.card {
+    text-decoration: none;
+    color: black;
+  }
+
 .card__description {
     display: flex;
     flex-direction: row;
