@@ -1,35 +1,31 @@
 footer{
     background-color: #353535;
-    padding: 20px;
+    @extend .bloc_top;
+    padding: 0 20px 20px 20px;
     color: white;
+    li{
+        margin-bottom: 6px;
+    }
+    h5{
+        font-size: 20px;
+        font-family: "Shrikhand";
+        font-weight: 140;
+    }
+    ul{
+        list-style-type: none;
+        margin-top: 15px;
+        a{
+            color: white;
+        }
+    }
 }
 
-footer li{
-    margin-bottom: 6px;
-}
-
-footer h5{
-    font-size: 20px;
-    font-family: "Shrikhand";
-    font-weight: 140;
-}
-
-ul{
-    list-style-type: none;
-    margin-top: 15px;
-}
-
-ul a{
-    color: white;
-}
-
-.imaged{
+.link__imaged{
     display: flex;
     gap: 15px;
-}
-
-.imaged .fa-utensils{
-    margin-right: 6px;
+    .fa-utensils{
+        margin-right: 6px;
+    }
 }
 
 @media (min-width: 992px){
@@ -43,4 +39,3 @@ ul a{
         gap: 160px;
     }
 }
-

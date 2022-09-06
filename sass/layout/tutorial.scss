@@ -1,42 +1,37 @@
 .tutorial {
-    margin: 20px 20px 60px 20px;
+    @extend .bloc_top;
+    padding: 0 20px 50px 20px;
+    .tutorial__title {
+      margin-bottom: 20px;
+    }
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &--step {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
-  
-  .tutorial__container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .tutorial__container--step {
-    display: flex;
-    align-items: center;
-  }
-  
-  .tutorial__title {
-    margin-bottom: 20px;
-  }
-  
+
   .step__card {
     display: flex;
-    border: 2px solid none;
     padding: 25px 30px 25px 40px;
     border-radius: 18px;
-    background-color: #f7f7f7;
+    background-color: $background1;
     position: relative;
     width: 100%;
+    p {
+      margin-left: 30px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    i {
+      font-size: 16px;
+    }
   }
-  
-  .step__card p {
-    margin-left: 30px;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  .step__card i {
-    font-size: 16px;
-  }
-  
+
   .step__number {
     font-size: 12px;
     position: absolute;

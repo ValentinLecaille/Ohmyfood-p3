@@ -1,9 +1,12 @@
+/* RESTAURANTS */
+
 .map__restaurants {
-    padding: 20px 20px 60px 20px;
-    background-color: #f6f6f6;
+    @extend .bloc_top;
+    padding: 0 20px 60px 20px;
+    background-color: $background2;
     &--title {
         padding-bottom: 20px;
-        padding-top: 30px;
+        @extend .bloc_top;
     }
 }
 
@@ -21,22 +24,22 @@
     margin-right: auto;
     border-radius: 20px;
     box-shadow: 2px 2px 10px rgb(146, 146, 146);
-}
-
-.card {
+    position: relative;
     text-decoration: none;
     color: black;
-  }
-
-.card__description {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 0 0 20px 20px;
-    padding: 14px;
-    &--titre h3 {
-        padding-bottom: 6px;
+    .card__badge{
+        @include badge_new;
+    }
+    .card__description {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0 0 20px 20px;
+        padding: 14px;
+        &--titre h3 {
+            padding-bottom: 6px;
+        }
     }
 }
 

@@ -1,0 +1,126 @@
+.restaurant_illustration {
+    img {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        object-fit: cover;
+        max-height: 470px;
+        max-width: 100%;
+    }
+}
+
+.menu {
+    padding: 30px 20px 40px 20px;
+    margin-top: -64px;
+    border-radius: 40px 40px 0 0;
+    background-color: $background1;
+    position: relative;
+    .menu__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        h6 {
+            font-family: 'shrikhand';
+            font-size: 26px;
+            letter-spacing: 0.7px;
+        }
+        i {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.menu__global {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    @include centered;
+    
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .submenu__title {
+        text-transform: uppercase;
+        color: black;
+        opacity: 0.7;
+        position: relative;
+        padding-bottom: 8px;
+        margin-left: 5px;
+        &::after {
+            content: "";
+            width: 40px;
+            height: 4px;
+            background-color: $color-tertiary;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
+    }
+    .submenu__selection {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .submenu__selection--item {
+        background-color: white;
+        box-shadow: 2px 2px 10px rgb(146, 146, 146);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        border-radius: 10px;
+        padding: 15px 20px 15px 15px;
+    }
+}
+
+.item{
+    &__words {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        &--title {
+            font-weight: bold;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        &--subtitle {
+            font-size: 15px;
+            opacity: 0.8;
+        }
+    }
+    &__price {
+        font-weight: bold;
+        font-size: 14px;
+        opacity: 0.8;
+    }
+}
+
+.btn__order {
+    margin-top: 50px;
+    font-weight: 500;
+    font-family: 'roboto';
+    color: white;
+    font-size: 18px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 100px;
+    background-image: linear-gradient(1deg, $color-primary, $color-secondary);
+    box-shadow: 2px 2px 10px rgb(146, 146, 146);
+    text-align: center;
+    width: 160px;
+    @include centered;
+  }
+
+  @media (min-width: 992px){
+    .menu__global{
+        flex-direction: row;
+        width: 100%;
+    }
+    .submenu{
+        flex-basis: 30%;
+    }
+}

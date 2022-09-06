@@ -1,0 +1,14 @@
+@mixin badge_new {
+    color: #134337;
+    background-color: #99e2d0;
+    border-radius: 4px;
+    padding: 8px;
+    position: absolute;
+    top: 18px;
+    right: 22px;
+}
+
+@mixin centered {
+    margin-left: auto;
+    margin-right: auto;
+}

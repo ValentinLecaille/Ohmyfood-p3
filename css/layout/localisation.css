@@ -1,0 +1,17 @@
+/* DEFINITION LOCALISATION BAR */
+.bar__loca--zone {
+  background-color: #f3f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.bar__loca--zone p, .bar__loca--zone i {
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+/*# sourceMappingURL=localisation.css.map */

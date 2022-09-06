@@ -1,0 +1,18 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 28 | /         @include badge_new
+ * 29 | |     } 
+ *    | '----^
+ *    '
+ *   sass\layout\restaurants.scss 28:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 28 \2502  \250c          @include badge_new\a 29 \2502  \2502      } \a    \2502  \2514 \2500 \2500 \2500 \2500 ^\a    \2575 \a   sass\\layout\\restaurants.scss 28:9  root stylesheet";
+}

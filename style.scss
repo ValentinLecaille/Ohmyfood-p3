@@ -1,7 +1,11 @@
-@import "./sass/base.scss";
+@import "./sass/utils/mixin.scss";
+@import "./sass/utils/variables.scss";
+@import "./sass/base/base.scss";
 @import "./sass/layout/header.scss";
 @import "./sass/layout/intro.scss";
 @import "./sass/layout/localisation.scss";
 @import "./sass/layout/tutorial.scss";
 @import "./sass/layout/restaurants.scss";
 @import "./sass/layout/footer.scss";
+@import "./sass/utils/extensions.scss";
+@import "./sass/pages/menu.scss";
