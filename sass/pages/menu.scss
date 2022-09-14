@@ -113,6 +113,9 @@
     text-align: center;
     width: 160px;
     @include centered;
+    &:hover{
+        @include btn-hover
+      }
   }
 
   @media (min-width: 992px){
