@@ -1,0 +1,23 @@
+.loader {
+    background-color: $background1;
+    height: 100vh;
+    inset: 0;
+    position: fixed;
+    z-index: 2;
+    animation: loader-exit 1s 3s;
+    animation-fill-mode: forwards;
+    display: grid;
+    place-items: center;
+    opacity: 0.9;
+    &__item{
+        height: 50px;
+        width: 50px;
+        border: 6px solid transparent;
+        border-radius: 50px;
+        border-top-color: $color-tertiary;
+        border-bottom-color: $color-tertiary;
+        animation: spin 3s cubic-bezier(.5,.17,.37,.82) infinite;
+        animation-fill-mode: forwards;
+        position: relative;
+    }
+}

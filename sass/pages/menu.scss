@@ -38,7 +38,6 @@
     justify-content: space-between;
     gap: 30px;
     @include centered;
-    
 }
 
 .submenu {
@@ -62,34 +61,57 @@
             bottom: 0;
           }
     }
+
     .submenu__selection {
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
+
     .submenu__selection--item {
         background-color: white;
         box-shadow: 2px 2px 10px rgb(146, 146, 146);
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: space-between;
         border-radius: 10px;
-        padding: 15px 20px 15px 15px;
+        height: 70px;
+        width: 100%;
+        cursor: pointer;
+        @include animation-menu;
+        overflow: hidden;
+        &:hover .item__check{
+            margin-right: 0;
+            transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+            transition-timing-function: ease-in-out;
+            i{
+                animation: check-spin 1.2s;
+            }
+        }
     }
 }
 
-.item{
+@keyframes check-spin {
+    0% { transform: rotate(0);}
+    100% { transform: rotate(360deg)}
+}
+
+.item {
     &__words {
         display: flex;
         flex-direction: column;
         gap: 6px;
+        padding-left: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         &--title {
             font-weight: bold;
             font-size: 16px;
             opacity: 0.8;
         }
         &--subtitle {
-            font-size: 15px;
+            font-size: 13px;
             opacity: 0.8;
         }
     }
@@ -97,7 +119,27 @@
         font-weight: bold;
         font-size: 14px;
         opacity: 0.8;
+        margin-left: 10px;
     }
+    &__check {
+        background-color: $color-tertiary;
+        display: grid;
+        place-items: center;
+        border-radius: 0 10px 10px 0;
+        padding: 16px;
+        margin-right: -66px;
+        height: 70px;
+        i{
+            color: white;
+            font-size: 24px;
+        }
+    }
+}
+
+.item__part2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .btn__order {
@@ -118,12 +160,13 @@
       }
   }
 
-  @media (min-width: 992px){
+  @media (min-width: 1020px){
     .menu__global{
         flex-direction: row;
         width: 100%;
     }
     .submenu{
         flex-basis: 30%;
+        max-width: 380px;
     }
 }

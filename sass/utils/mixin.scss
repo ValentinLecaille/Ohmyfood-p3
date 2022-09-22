@@ -17,3 +17,12 @@
     opacity: 0.9;
     box-shadow: 4px 4px 14px rgb(146, 146, 146);
 }
+
+@mixin animation-menu {
+    @for $i from 1 through 4 { 
+        &:nth-child(#{$i}) {
+        animation-delay: 500ms*$i;}}
+    animation: menu-appear 1200ms;
+    transition-timing-function: cubic-bezier(.90,.2,.61,.89);
+    animation-fill-mode: both;
+}

@@ -8,3 +8,22 @@
         opacity: 1;
     }
 }
+
+@keyframes loader-exit {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes spin{
+    0%{ transform: rotate(0deg)  scale(0)}
+    50%{ transform: rotate(360deg) scale(1)}
+    100%{ transform: rotate(0deg) scale(0)}
+}

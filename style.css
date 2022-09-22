@@ -1,3 +1,36 @@
+@keyframes menu-appear {
+  0% {
+    margin-top: 60px;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+@keyframes loader-exit {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    transform: rotate(360deg) scale(1);
+  }
+  100% {
+    transform: rotate(0deg) scale(0);
+  }
+}
 /* STYLES PRINCIPAUX */
 * {
   margin: 0;
@@ -39,6 +72,30 @@ h4 {
 
 a {
   text-decoration: none;
+}
+
+.loader {
+  background-color: #f7f7f7;
+  height: 100vh;
+  inset: 0;
+  position: fixed;
+  z-index: 2;
+  animation: loader-exit 1s 3s;
+  animation-fill-mode: forwards;
+  display: grid;
+  place-items: center;
+  opacity: 0.9;
+}
+.loader__item {
+  height: 50px;
+  width: 50px;
+  border: 6px solid transparent;
+  border-radius: 50px;
+  border-top-color: #99E2D0;
+  border-bottom-color: #99E2D0;
+  animation: spin 3s cubic-bezier(0.5, 0.17, 0.37, 0.82) infinite;
+  animation-fill-mode: forwards;
+  position: relative;
 }
 
 /* DEFINITION HEADER NAVBAR */
@@ -228,6 +285,23 @@ a {
 .card .card__description--titre h3 {
   padding-bottom: 6px;
 }
+.card .card__description .heart {
+  position: relative;
+}
+.card .card__description .heart .fa-solid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: linear-gradient(1deg, #9356DC, #FF79DA);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  opacity: 0;
+}
+.card .card__description .heart .fa-solid:hover.fa-solid {
+  opacity: 1;
+  transform: scale(1.1);
+  transition-duration: 700ms;
+}
 
 .card__description i {
   font-size: 24px;
@@ -257,23 +331,6 @@ a {
     padding-left: 0;
   }
 }
-.heart {
-  position: relative;
-}
-.heart .fa-solid {
-  position: absolute;
-  left: 0;
-  right: 0;
-  background: linear-gradient(1deg, #9356DC, #FF79DA);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  opacity: 0;
-}
-.heart .fa-solid:hover.fa-solid {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
 footer {
   background-color: #353535;
   padding: 0 20px 20px 20px;
@@ -390,16 +447,54 @@ footer ul a {
   background-color: white;
   box-shadow: 2px 2px 10px rgb(146, 146, 146);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  padding: 15px 20px 15px 15px;
+  height: 70px;
+  width: 100%;
+  cursor: pointer;
+  animation: menu-appear 1200ms;
+  transition-timing-function: cubic-bezier(0.9, 0.2, 0.61, 0.89);
+  animation-fill-mode: both;
+  overflow: hidden;
+}
+.submenu .submenu__selection--item:nth-child(1) {
+  animation-delay: 500ms;
+}
+.submenu .submenu__selection--item:nth-child(2) {
+  animation-delay: 1000ms;
+}
+.submenu .submenu__selection--item:nth-child(3) {
+  animation-delay: 1500ms;
+}
+.submenu .submenu__selection--item:nth-child(4) {
+  animation-delay: 2000ms;
+}
+.submenu .submenu__selection--item:hover .item__check {
+  margin-right: 0;
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition-timing-function: ease-in-out;
+}
+.submenu .submenu__selection--item:hover .item__check i {
+  animation: check-spin 1.2s;
 }
 
+@keyframes check-spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .item__words {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  padding-left: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .item__words--title {
   font-weight: bold;
@@ -407,13 +502,33 @@ footer ul a {
   opacity: 0.8;
 }
 .item__words--subtitle {
-  font-size: 15px;
+  font-size: 13px;
   opacity: 0.8;
 }
 .item__price {
   font-weight: bold;
   font-size: 14px;
   opacity: 0.8;
+  margin-left: 10px;
+}
+.item__check {
+  background-color: #99E2D0;
+  display: grid;
+  place-items: center;
+  border-radius: 0 10px 10px 0;
+  padding: 16px;
+  margin-right: -66px;
+  height: 70px;
+}
+.item__check i {
+  color: white;
+  font-size: 24px;
+}
+
+.item__part2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .btn__order {
@@ -436,13 +551,14 @@ footer ul a {
   box-shadow: 4px 4px 14px rgb(146, 146, 146);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1020px) {
   .menu__global {
     flex-direction: row;
     width: 100%;
   }
   .submenu {
     flex-basis: 30%;
+    max-width: 380px;
   }
 }
 
