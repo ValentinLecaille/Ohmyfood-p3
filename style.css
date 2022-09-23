@@ -52,6 +52,7 @@ main {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1400px;
 }
 
 p {
@@ -406,6 +407,24 @@ footer ul a {
   font-size: 28px;
   margin-right: 10px;
 }
+.menu .menu__title .heart {
+  position: relative;
+}
+.menu .menu__title .heart .fa-solid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  background: linear-gradient(1deg, #9356DC, #FF79DA);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  opacity: 0;
+}
+.menu .menu__title .heart .fa-solid:hover.fa-solid {
+  opacity: 1;
+  transform: scale(1.1);
+  transition-duration: 700ms;
+}
 
 .menu__global {
   display: flex;
@@ -476,7 +495,7 @@ footer ul a {
   transition-timing-function: ease-in-out;
 }
 .submenu .submenu__selection--item:hover .item__check i {
-  animation: check-spin 1.2s;
+  animation: check-spin 1.2s both;
 }
 
 @keyframes check-spin {
@@ -488,7 +507,7 @@ footer ul a {
   }
 }
 .item__words {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   gap: 6px;
   padding-left: 16px;
@@ -500,10 +519,18 @@ footer ul a {
   font-weight: bold;
   font-size: 16px;
   opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .item__words--subtitle {
   font-size: 13px;
   opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .item__price {
   font-weight: bold;

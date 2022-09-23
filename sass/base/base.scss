@@ -25,6 +25,7 @@
   main {
     display: block;
     @include centered;
+    max-width: 1400px;
   }
 
   p {

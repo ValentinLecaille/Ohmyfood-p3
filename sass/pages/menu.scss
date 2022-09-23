@@ -29,6 +29,24 @@
             font-size: 28px;
             margin-right: 10px;
         }
+        .heart {
+            position: relative;
+            .fa-solid {
+                position: absolute;
+                left: 0;
+                right: 0;
+                cursor: pointer;
+                background: linear-gradient(1deg, $color-primary, $color-secondary);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                opacity: 0;
+                &:hover.fa-solid {
+                    opacity: 1;
+                    transform: scale(1.1);
+                    transition-duration: 700ms;
+                }
+            }
+        }
     }
 }
 
@@ -85,7 +103,7 @@
             transition: all 500ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
             transition-timing-function: ease-in-out;
             i{
-                animation: check-spin 1.2s;
+                animation: check-spin 1.2s both;
             }
         }
     }
@@ -98,21 +116,23 @@
 
 .item {
     &__words {
-        display: flex;
+        display: inline-block;
         flex-direction: column;
         gap: 6px;
         padding-left: 16px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include elipsis;
         &--title {
             font-weight: bold;
             font-size: 16px;
             opacity: 0.8;
+            @include elipsis;
         }
         &--subtitle {
             font-size: 13px;
             opacity: 0.8;
+            white-space: nowrap;
+            overflow: hidden;
+            @include elipsis;
         }
     }
     &__price {
