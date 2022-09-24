@@ -88,7 +88,6 @@
 
     .submenu__selection--item {
         background-color: white;
-        box-shadow: 2px 2px 10px rgb(146, 146, 146);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -149,6 +148,7 @@
         padding: 16px;
         margin-right: -66px;
         height: 70px;
+        transition: margin 500ms;
         i{
             color: white;
             font-size: 24px;
@@ -180,13 +180,14 @@
       }
   }
 
-  @media (min-width: 1020px){
+  @media (min-width: 992px){
     .menu__global{
         flex-direction: row;
         width: 100%;
     }
     .submenu{
         flex-basis: 30%;
-        max-width: 380px;
+        width: 100%;
+        overflow: hidden;
     }
 }
