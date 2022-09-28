@@ -31,21 +31,17 @@
     transform: rotate(0deg) scale(0);
   }
 }
-/* STYLES PRINCIPAUX */
 * {
   margin: 0;
   padding: 0;
 }
 
-@font-face {
-  font-family: "Roboto", sans-serif;
-  src: url("Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("Roboto-Regular.woff2") format("woff2"), url("Roboto-Regular.woff") format("woff"), url("Roboto-Regular.ttf") format("truetype"), url("Roboto-Regular.svg#Roboto-Regular") format("svg");
-}
 body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -53,6 +49,7 @@ main {
   margin-left: auto;
   margin-right: auto;
   max-width: 1400px;
+  min-width: 300x;
 }
 
 p {
@@ -99,7 +96,6 @@ a {
   position: relative;
 }
 
-/* DEFINITION HEADER NAVBAR */
 .navbar {
   padding-bottom: 30px;
   box-shadow: 0 0 0.1px rgba(0, 0, 0, 0.25);
@@ -130,7 +126,6 @@ a {
     margin-left: 40px;
   }
 }
-/* DEFINITION INTRO */
 .bar__intro {
   background-color: #f7f7f7;
   border: 1px none solid;
@@ -166,7 +161,6 @@ a {
   box-shadow: 4px 4px 14px rgb(146, 146, 146);
 }
 
-/* DEFINITION LOCALISATION BAR */
 .bar__loca--zone {
   background-color: #f3f2f2;
   display: flex;
@@ -195,6 +189,7 @@ a {
 .tutorial__container--step {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .step__card {
@@ -204,6 +199,7 @@ a {
   background-color: #f7f7f7;
   position: relative;
   width: 100%;
+  transition: all 0.4s ease-in-out;
 }
 .step__card p {
   margin-left: 30px;
@@ -212,6 +208,9 @@ a {
 }
 .step__card i {
   font-size: 16px;
+}
+.step__card:hover {
+  background-color: rgba(147, 86, 220, 0.3);
 }
 
 .step__number {
@@ -239,7 +238,6 @@ a {
     width: 100%;
   }
 }
-/* RESTAURANTS */
 .map__restaurants {
   padding: 0 20px 60px 20px;
   background-color: #f3f2f2;
@@ -362,10 +360,13 @@ footer ul a {
 }
 
 @media (min-width: 992px) {
-  footer {
+  .footer__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .column-footer {
     display: flex;

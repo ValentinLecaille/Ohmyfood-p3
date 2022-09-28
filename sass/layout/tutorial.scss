@@ -11,6 +11,7 @@
       &--step {
         display: flex;
         align-items: center;
+        cursor: pointer;
       }
     }
   }
@@ -22,6 +23,7 @@
     background-color: $background1;
     position: relative;
     width: 100%;
+    transition: all 0.4s ease-in-out;
     p {
       margin-left: 30px;
       font-weight: bold;
@@ -29,6 +31,9 @@
     }
     i {
       font-size: 16px;
+    }
+    &:hover{
+      background-color: rgba($color-primary, 0.3);
     }
   }
 

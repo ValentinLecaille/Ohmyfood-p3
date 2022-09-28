@@ -29,10 +29,12 @@ footer{
 }
 
 @media (min-width: 992px){
-    footer {
+    .footer__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        max-width: 1400px;
+        @include centered
     }
     .column-footer {
         display: flex;
