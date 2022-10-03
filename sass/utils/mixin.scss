@@ -20,7 +20,7 @@
 
 @mixin animation-menu {
     @for $i from 1 through 4 { 
-        &:nth-child(#{$i}) {
+        &:nth-child(#{$i}){
         animation-delay: 500ms*$i;}}
     animation: menu-appear 1200ms;
     transition-timing-function: cubic-bezier(.90,.2,.61,.89);
@@ -31,4 +31,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@mixin bloc_top {
+    padding-top: 20px;
 }

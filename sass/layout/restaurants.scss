@@ -1,10 +1,10 @@
 .map__restaurants {
-    @extend .bloc_top;
+    @include bloc_top;
     padding: 0 20px 60px 20px;
     background-color: $background2;
     &--title {
         padding-bottom: 20px;
-        @extend .bloc_top;
+        @include bloc_top;
     }
 }
 
