@@ -188,8 +188,7 @@ a {
 }
 
 .tutorial {
-  padding-top: 20px;
-  padding: 0 20px 50px 20px;
+  padding: 20px 20px 50px 20px;
 }
 .tutorial .tutorial__title {
   margin-bottom: 20px;
@@ -347,8 +346,7 @@ a {
 }
 footer {
   background-color: #353535;
-  padding-top: 20px;
-  padding: 0 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   color: white;
   min-width: 300px;
 }
